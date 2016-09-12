@@ -1,0 +1,13 @@
+{
+  "name": "gulp-bower",
+  "version": "0.1.0",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
+    "jasmine": "^2.4.1",
+    "jasmine-jquery": "^2.1.1"
+  },
+  "dependencies": {}
+}

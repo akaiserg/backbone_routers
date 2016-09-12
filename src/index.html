@@ -1,0 +1,55 @@
+<!doctype html>
+<html >
+  <head>
+    <title>Web project</title>
+    <!-- build:css-->
+      <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <!-- endbuild-->
+    </head>
+  <body>
+    <div class="container">
+      <div id="parent_id" class="row">
+        <div id="home-view_id">
+        </div>
+        <div id="person-view_id">
+        </div>
+      </div>
+    </div>
+</body>
+
+<!-- build:js-->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore-min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/backbone/backbone.js"></script>
+
+    <script src="modules/models/PersonModel.js" type="text/javascript"></script>
+    <script src="modules/collections/PersonCollection.js" type="text/javascript"></script>
+    <script src="modules/views/HomeView.js" type="text/javascript"></script>
+    <script src="modules/views/PersonsTableView.js" type="text/javascript"></script>
+    <script src="modules/views/PersonRowView.js" type="text/javascript"></script>
+
+    <script src="modules/routers/Router.js" type="text/javascript"></script>
+    <script src="modules/utils/AjaxPromise.js" type="text/javascript"></script>
+<!-- endbuild-->
+
+<script>
+    var personCollection= new PersonCollection();
+    personCollection.add({name:"name 1", age:23});
+    personCollection.add({name:"name 2", age:33});
+    personCollection.add({name:"name 3", age:25});
+    personCollection.add({name:"name 4", age:21});
+    personCollection.add({name:"name 5", age:18});
+
+    //  var viewHome= new HomeView({ collection: personCollection });
+    //  viewHome.render();
+
+    //var  viewPErsons=  new PersonsView({collection:personCollection});
+    //viewPErsons.render();
+    var router= new Router;
+    router.setCollection(personCollection);
+    Backbone.history.start();
+</script>
+
+
+</html>
